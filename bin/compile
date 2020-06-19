@@ -97,7 +97,7 @@ dotnet publish $PROJECT_FILE --output $BUILD_DIR/$APP_ASSEMBLY --configuration R
 
 # Remove src files in production machine
 cd $BUILD_DIR
-find -maxdepth 1 ! -name bin ! -name .profile.d ! -name .apt ! -name .dotnet ! -name node_modules ! -name $APP_ASSEMBLY  -exec rm -rv {} \; > /dev/null 2>&1;
+find -maxdepth 1 ! -name vendor ! -name bin ! -name .profile.d ! -name .apt ! -name .dotnet ! -name node_modules ! -name $APP_ASSEMBLY  -exec rm -rv {} \; > /dev/null 2>&1;
 
 # Create procfile and Add process type to that 
 cat << EOT >> ${BUILD_DIR}/Procfile
