@@ -101,5 +101,5 @@ find -maxdepth 1 ! -name vendor ! -name bin ! -name .profile.d ! -name .apt ! -n
 
 # Create procfile and Add process type to that 
 cat << EOT >> ${BUILD_DIR}/Procfile
-web: bin/start-pgbouncer && cd \$HOME/$APP_ASSEMBLY && ASPNETCORE_URLS='http://+:\$PORT' dotnet "./$APP_ASSEMBLY.dll"
+web: cd \$HOME/$APP_ASSEMBLY && ASPNETCORE_URLS='http://+:\$PORT' dotnet "./$APP_ASSEMBLY.dll"
 EOT
